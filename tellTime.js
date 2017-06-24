@@ -1,17 +1,34 @@
-var HOUR = 8;
-var MINUTE = 50;
-var PERIOD = "AM";
+var HOUR = [];
+var MINUTE = []];
+var PERIOD = ["AM", "PM"];
+var morning = boolean;
+var evening = boolean;
+var messageM = "<p>It's almost 9 in the moring</p>";
+var messageE = "<p>It's just after 7 in the evening</p>";
+var tickTock = [HOUR, MINUTE, PERIOD];
 
-function tellTime (tickTock, morning, evening){
-    morning = true;
-    evening = false;
-    messageM = "<p>It's almost 9 in the moring</p>";
-    messageE = "<p>It's just after 7 in the evening</p>";
-    tickTock = [HOUR, MINUTE, PERIOD];
-    for ( var i = 0; i < tickTock.length; i++){
-        if (morning == true){
-            document.write(messageM);
-        }
+function morningTime(){
+    if (morning == true){
+        HOUR = 8;
+        MINUTE = 50;
+        PERIOD = "AM";
     }
+    return document.write(messageM + tickTock);
+};
+function eveningTime(){
+    if (evening == true){
+        HOUR = 7;
+        MINUTE = 15;
+        PERIOD = "PM";
+    }
+    return document.write(messageE + tickTock);
+};
+
+function tellTime (){
+    morning = true;
+    for( var i = 0; i < 2; i++){
+        morningTime();
+    };
+    
 }
 tellTime();
